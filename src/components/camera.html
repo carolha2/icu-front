@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
+</head>
+<body>
+<img id="img" style="display: block;margin: auto;background-color: hsl(0, 0%, 25%);" src="http://192.168.1.11:6677/videofeed" width="227" height="404" onload="setImageStreamSize()">
+    
+    <img id="img" style="display: block;margin: auto;background-color: hsl(0, 0%, 25%);" src="http://192.168.1.6:6677/videofeed" width="227" height="404" onload="setImageStreamSize()">
+
+
+    <br/>
+    <div id="func-icon" class="button" style="display:inline-block;background :rgba(255, 255, 255, 0.15);border-radius:8%">
+        <span id="btn">
+            <img class="funcIcon-dimention" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFEAAABRCAYAAACqj0o2AAAACXBIWXMAAAsSAAALEgHS3X78AAAD9UlEQVR4nO2c7ZHaMBCGl0z+4w6ODkIH4SoIV0G4DkgFRzrgOiAVHB3EVBDSAVdBTAXOOCMxnp3VSrLXxOvZZ8Y/wLYsv2il/dDdrK5rMPrxwfTrj4kogIkogIkogIkogIkoACViPdFjdU8RDRPx/piIApiIAqSKOFN2nMYoomEiDouJKICJKICJKICJKICJKICJKICJKMBH9W9Acya+rYZ6GFUypWqos6E6kMnKCTSUIIV7xjHnJk3mvAaAn7kvmMkOAN4AYJN1WzMS0UFBXXfPo6jrumr1azvAs9fovRep92oZic3ImLc+NyNmKdh+Y8YH9N0u9WYtIq7R5znx0n04oB8Jcn4kzS7Op5zRwrAFgC+B9pPQ7ie+9KziLZgf4praiBYRL8y5g5vTunAkzNhTpranRURu/nsAgH2HNncRk013pZS4OM1xCPTNs85oaxVpq8zpm6aIpXDRykPg/NXNcbFoRqqdG5oWlioSScwTTXDPCAjuGXlhpSJz9scuYopcNIOjEsyhS5+0JSA8Z2ZRuLYSFW0Kt8qHVuN352BnJze0+okbxo8LRTOcOwOdzNihVcRzJFrB0UwTlXxmrv+e4xditJqzp4yI8+hGV8mMwt99kxnaRUyZ56oO82cW2mPnmNvzEIlKdn0FhAmMRE+zkHzNvOcktQV5KiLGohBMdlTCMZWSacysMZ3dGYop1Z1L56rE+CFd7JqKOXsas/4Tueaxj09IMbUdEKkJCFGmJGIoKsHhoVRt5sZUzHkZiEq+OWf8jbhHzKw1ibgkSqdH59pQWZ22H3gkKno+a1O4dtt1mvPUygNNKv/C5ACpcxXawVAErou1m1RyGLuIG+YlOaiXj9VVQmw0i9j1pY9Mm/uObbIjcsxz4oUI415bc9WGiJdTwjmqXe+AV25+xHt/rmxte6QjcUn0YZlo7txuroK4njLXJdqFFrru3zFWPxGvwq+BlNXBjSLu3jY4+XoKlBLOhFMezPiMVcQF+sy5G/gct6UEC8H5ibhd3KcbtvE9TPL+nrGKiDcwcWkubL7cooJHHpeUxefCm6oULSzUxC6xsFDF/qyFZcwuDhXKtXOBa8LFSUn5U6UEv8BUgXbfuTlxzCI2K+mvjOuv7h5uLyMkVAgpnrjFbcwLSzMSnxOv9aXPmIDgRtsqYyfsczQZMdI5Ec9PZaBftTuX/OcSrWMR2fN4caFntC1tqbBVy/Wo3AihRt+ecKy3AYd9QaTCjjn16KnVWDzU9hLx2orHnG0BTEQBUv9UV7SwcweCPt0QpIr4okC4/4aZswAmogAmogDUnJiyKUgjKSFhJ+zf5gtg5iyAiSiAiSiAiSiAidgXAPgLAMliHtXzehIAAAAASUVORK5CYII=">
+            <span class="func-title" style="display:block;color :black;word-wrap:break-word">
+                Take Screenshot
+            </span>
+        </span>
+    </div>
+    
+
+<script>
+    function setImageStreamSize() {
+            $('#btn_full_screen').attr('disabled', false);
+            $("#connecting").hide();
+        }
+    function img() {
+        const img = document.querySelector('#img')
+        html2canvas(img)
+            .then(canvas => {
+                document.body.appendChild(canvas)
+                canvas.style.display = 'none'
+                return canvas
+            })
+            .then(canvas => {
+                const image = canvas.toDataURL('image/png').replace('image/png', 'image/octet-stream')
+                const a = document.createElement('a')
+                a.setAttribute('download', 'my-image.png')
+                a.setAttribute('href', image)
+                a.click()
+                canvas.remove()
+            })
+    }
+
+    const btn = document.querySelector('#btn')
+    btn.addEventListener('click', img)
+
+</script>
+<script type="text/javascript">
+    var input = document.getElementById('button');
+       var outputtext = document.getElementById('img');
+</script>
+</body>
+</html>
+

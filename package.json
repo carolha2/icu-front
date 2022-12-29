@@ -1,0 +1,58 @@
+{
+  "name": "react-jwt-auth",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.12.4",
+    "@material-ui/icons": "^4.11.3",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "axios": "^0.19.2",
+    "bootstrap": "^4.4.1",
+    "firebase": "^9.9.1",
+    "framer-motion": "^6.5.1",
+    "react": "^16.14.0",
+    "react-bootstrap": "^2.4.0",
+    "react-border-wrapper": "^1.0.3",
+    "react-dom": "^16.14.0",
+    "react-dropdown": "^1.10.0",
+    "react-elastic-carousel": "^0.11.5",
+    "react-icons": "^4.4.0",
+    "react-multi-select-component": "^4.3.2",
+    "react-otp-input": "^2.4.0",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.4.0",
+    "react-select": "^5.4.0",
+    "react-toastify": "^9.0.7",
+    "react-validation": "^3.0.7",
+    "react-wavify": "^1.6.1",
+    "redux": "^4.2.0",
+    "sass": "^1.54.0",
+    "styled-components": "^5.3.5",
+    "validator": "^12.2.0",
+    "video-react": "^0.15.0",
+    "yarn": "^1.22.19"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
